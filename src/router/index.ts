@@ -162,12 +162,12 @@ router.beforeEach(async (to: RouteLocationNormalized, _, next: NavigationGuardNe
     // }
 
     // 有token时，前往登录页
-    if (/^\/login.*/.test(to.path)) {
+    if (/\/login.*/.test(to.path)) {
       if (to.query.from) {
         // 存在登录跳转回页面
         next(to.query.from as string);
       } else {
-        next('/');
+        next('/vue3-admin');
       }
     } else {
       store.commit('setting/routeChanged', {
@@ -184,13 +184,13 @@ router.beforeEach(async (to: RouteLocationNormalized, _, next: NavigationGuardNe
     // 没有token
 
     // 判断是否是登录页，防止死循环
-    if (/^\/login.*/.test(to.path)) {
+    if (/\/login.*/.test(to.path)) {
       next();
-    } else if ('/404' === to.path) {
+    } else if ('/vue3-admin/404' === to.path) {
       const from = to.query.from;
-      next(from ? `/login?from=${from}` : '/login');
+      next(from ? `/vue3-admin/login?from=${from}` : '/vue3-admin/login');
     } else {
-      next(`/login?from=${to.path}`);
+      next(`/vue3-admin/login?from=${to.path}`);
     }
   }
 });
