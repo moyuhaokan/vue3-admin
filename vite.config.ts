@@ -41,9 +41,11 @@ const options: AntdThemeOptions = {
   customColorRegexArray: [/^fade\(.*\)$/] // An array of regex codes to match your custom color variable values so that code can identify that it's a valid color. Make sure your regex does not adds false positives.
 };
 
+import { homepage } from './package.json';
+
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
-    base: '/',
+    base: homepage,
     build: {
       outDir: 'docs'
     },
