@@ -1,0 +1,1 @@
+import{e,f as t,aV as a}from"./vendor.79a8b122.js";var s=e({name:"ViewError403",setup:()=>()=>t("div",{style:{height:"100%",display:"flex",justifyContent:"center",alignItems:"center"}},[t(a,{status:"403",title:"403","sub-title":"Sorry, you are not authorized to access this page."},null)])});export default s;

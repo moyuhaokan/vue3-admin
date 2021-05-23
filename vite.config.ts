@@ -44,6 +44,9 @@ const options: AntdThemeOptions = {
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
     base: '/',
+    build: {
+      outDir: 'docs'
+    },
     server: {
       host: 'localhost',
       open: true,
