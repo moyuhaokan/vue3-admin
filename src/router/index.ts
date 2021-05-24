@@ -1,6 +1,6 @@
 import {
   createRouter,
-  createWebHistory,
+  createWebHashHistory,
   RouteLocationNormalized,
   NavigationGuardNext,
   RouteRecordRaw,
@@ -139,7 +139,7 @@ const routes: Array<AdminRouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(VITE_BASE),
+  history: createWebHashHistory(VITE_BASE),
   routes
 });
 
