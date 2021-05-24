@@ -37,6 +37,8 @@ interface OverrideRecordRaw {
 
 type AdminRouteRecordRaw = RouteRecordRaw & OverrideRecordRaw;
 
+const VITE_BASE = import.meta.env.VITE_BASE;
+
 // vue-router子路由path不需要添加/关键词
 const routes: Array<AdminRouteRecordRaw> = [
   {
@@ -137,11 +139,9 @@ const routes: Array<AdminRouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(VITE_BASE),
   routes
 });
-
-const WHITE_LIST = ['/404'];
 
 router.beforeEach(async (to: RouteLocationNormalized, _, next: NavigationGuardNext) => {
   NProgress.start();
@@ -167,7 +167,7 @@ router.beforeEach(async (to: RouteLocationNormalized, _, next: NavigationGuardNe
         // 存在登录跳转回页面
         next(to.query.from as string);
       } else {
-        next('/vue3-admin');
+        next(VITE_BASE);
       }
     } else {
       store.commit('setting/routeChanged', {
@@ -188,9 +188,9 @@ router.beforeEach(async (to: RouteLocationNormalized, _, next: NavigationGuardNe
       next();
     } else if ('/vue3-admin/404' === to.path) {
       const from = to.query.from;
-      next(from ? `/vue3-admin/login?from=${from}` : '/vue3-admin/login');
+      next(from ? `${VITE_BASE}/login?from=${from}` : `${VITE_BASE}/login`);
     } else {
-      next(`/vue3-admin/login?from=${to.path}`);
+      next(`${VITE_BASE}/login?from=${to.path}`);
     }
   }
 });
