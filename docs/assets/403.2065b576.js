@@ -1,0 +1,1 @@
+import{d as e,e as t,b0 as s}from"./vendor.fd2450d3.js";var r=e({name:"ViewError403",setup:()=>()=>t("div",{style:{height:"100%",display:"flex",justifyContent:"center",alignItems:"center"}},[t(s,{status:"403",title:"403","sub-title":"Sorry, you are not authorized to access this page."},null)])});export default r;
