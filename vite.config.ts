@@ -8,20 +8,17 @@ import viteAntdTheme, { ThemeEntry, AntdThemeOptions } from 'vite-plugin-antd-th
 const themesEntry: Array<ThemeEntry> = [
   // 暗黑主题
   {
-    entryPath: './node_modules/ant-design-vue/lib/style/themes/dark.less',
+    entryPath: [
+      path.resolve(__dirname, './node_modules/ant-design-vue/lib/style/themes/dark.less'),
+      path.resolve(__dirname, './src/styles/dark.less')
+    ],
     outputName: 'dark',
     outputPath: './src/config'
   },
   // 默认主题
   {
-    entryPath: './src/styles/vars.less',
+    entryPath: path.resolve(__dirname, './src/styles/default.less'),
     outputName: 'light',
-    outputPath: './src/config'
-  },
-  // 紧凑主题
-  {
-    entryPath: './node_modules/ant-design-vue/lib/style/themes/compact.less',
-    outputName: 'compact',
     outputPath: './src/config'
   }
 ];
@@ -33,7 +30,7 @@ const options: AntdThemeOptions = {
   // 以下是antd-theme-generator配置项
   antDir: path.join(__dirname, './node_modules/ant-design-vue'),
   stylesDir: path.join(__dirname, './src'), // all files with .less extension will be processed
-  varFile: path.join(__dirname, './src/styles/vars.less'), // default path is Ant Design default.less file
+  varFile: path.join(__dirname, './src/styles/default.less'), // default path is Ant Design default.less file
   themeVariables: [],
   outputFilePath: path.join(__dirname, './public/static/color.less'), // if provided, file will be created with generated less/styles
   customColorRegexArray: [/^fade\(.*\)$/] // An array of regex codes to match your custom color variable values so that code can identify that it's a valid color. Make sure your regex does not adds false positives.
@@ -49,7 +46,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
     },
     server: {
       host: 'localhost',
-      open: true,
+      open: false,
       port: 3344,
       https: false
     },
@@ -77,9 +74,10 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         localsConvention: 'camelCase' // 默认只支持驼峰，修改为同事支持横线和驼峰
       },
       preprocessorOptions: {
-        scss: { additionalData: `@import "@/styles/vars.scss";` },
+        // scss: { additionalData: `@import "@/styles/vars.scss";` },
         less: {
-          javascriptEnabled: true
+          javascriptEnabled: true,
+          additionalData: `@import "@/styles/default.less";`
         }
       }
     }
