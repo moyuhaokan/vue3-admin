@@ -1,1 +1,0 @@
-import{d as a,ah as e,e as r,aA as n,aD as s,ao as u,ac as o}from"./vendor.fd2450d3.js";var l=a({name:"ViewForm",setup(){const a=e({number:1});return()=>r(o,null,[r(n,{value:a.number},null),r(s,{onClick:()=>{a.number=Math.random()}},{default:()=>[u("随机")]})])}});export default l;
