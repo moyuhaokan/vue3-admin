@@ -1,1 +1,0 @@
-import{d as a,aj as e,e as r,aC as n,aF as s,aq as u,ae as l}from"./vendor.82f76491.js";var m=a({name:"ViewForm",setup(){const a=e({number:1});return()=>r(l,null,[r(n,{value:a.number},null),r(s,{onClick:()=>{a.number=Math.random()}},{default:()=>[u("随机")]})])}});export default m;

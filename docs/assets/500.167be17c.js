@@ -1,0 +1,1 @@
+import{d as e,e as t,bb as r}from"./vendor.8d8b2e23.js";var s=e({name:"ViewError500",setup:()=>()=>t("div",{style:{height:"100%",display:"flex",justifyContent:"center",alignItems:"center"}},[t(r,{status:"500",title:"500","sub-title":"Sorry, the server is wrong."},null)])});export default s;

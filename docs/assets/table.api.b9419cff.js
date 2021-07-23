@@ -1,1 +1,0 @@
-import{a as e}from"./index.e9d0583d.js";const a=(a,t,g="")=>e.get(`/table/getBaseTableList?pageNo=${a}&pageSize=${t}&name=${g}`),t=(a,t,g="")=>e.get(`/table/getQueryTableList?pageNo=${a}&pageSize=${t}&name=${g}`);export{t as a,a as g};
