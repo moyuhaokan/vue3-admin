@@ -10,6 +10,7 @@ import LogoImg from '@/assets/logo.png';
 import './index.less';
 
 import Setting from './Setting';
+import RouteBar from './RouteBar';
 
 export default defineComponent({
   setup() {
@@ -55,6 +56,7 @@ export default defineComponent({
               }}
             />
           </header>
+          <RouteBar />
           <main class="layout-main">
             {/* https://github.com/vuejs/vue-router-next/issues/716#issuecomment-759521287 */}
             <RouterView>
