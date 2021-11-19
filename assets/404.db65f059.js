@@ -1,0 +1,1 @@
+import{e as t,f as e,bc as s}from"./vendor.9087327e.js";var i=t({name:"ViewError404",setup(){return()=>e("div",{style:{height:"100%",display:"flex",justifyContent:"center",alignItems:"center"}},[e(s,{status:"404",title:"404","sub-title":"Sorry, the page you visited does not exist."},null)])}});export{i as default};

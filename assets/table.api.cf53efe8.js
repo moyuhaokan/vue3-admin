@@ -1,0 +1,1 @@
+import{a as s}from"./index.621cc560.js";const i=(e,a,t="")=>s.get(`/table/getBaseTableList?pageNo=${e}&pageSize=${a}&name=${t}`),n=(e,a,t="")=>s.get(`/table/getQueryTableList?pageNo=${e}&pageSize=${a}&name=${t}`);export{n as a,i as g};

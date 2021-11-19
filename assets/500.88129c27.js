@@ -1,0 +1,1 @@
+import{e as t,f as e,bc as r}from"./vendor.9087327e.js";var n=t({name:"ViewError500",setup(){return()=>e("div",{style:{height:"100%",display:"flex",justifyContent:"center",alignItems:"center"}},[e(r,{status:"500",title:"500","sub-title":"Sorry, the server is wrong."},null)])}});export{n as default};
